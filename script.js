@@ -1,4 +1,3 @@
-// Initialize expenses array
 let expenses = [];
 
 // Function to render expenses in the table
@@ -16,7 +15,6 @@ function renderExpenses() {
         tableBody.appendChild(row);
     });
 
-    // Update totals
     const budget = parseFloat(document.getElementById('budget').value) || 0;
     document.getElementById('budvalue').textContent = budget;
 
@@ -24,7 +22,6 @@ function renderExpenses() {
     document.getElementById('total').textContent = totalExpense;
     document.getElementById('balance').textContent = budget - totalExpense;
 
-    // Add event listeners to remove buttons
     document.querySelectorAll('.remove-button').forEach(button => {
         button.addEventListener('click', function () {
             const index = this.getAttribute('data-index');
@@ -34,10 +31,10 @@ function renderExpenses() {
     });
 }
 
-// Form submission
+// Form 
 const form = document.querySelector('#expense-form');
 form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent page refresh
+    event.preventDefault(); //To prevent page refresh
 
     const amount = document.getElementById('amount').value;
     const category = document.getElementById('category').value;
